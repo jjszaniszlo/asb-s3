@@ -1,0 +1,194 @@
+services:
+  rcon:
+    container_name: rcon
+    hostname: rcon
+    image: itzg/rcon
+    restart: unless-stopped
+    ports:
+      - "4326:4326"
+      - "4327:4327"
+    environment:
+      REPLACE_ENV_DURING_SYNC: "TRUE"
+      RWA_RCON_PASSWORD: ${MC_RCON_PASSWORD}
+      RWA_ADMIN: "TRUE"
+      RWA_USERNAME: admin
+      RWA_PASSWORD: ${MC_RCON_USER_ADMIN_PASSWORD}
+      RWA_RCON_HOST: mc-survival
+    volumes:
+      - rcon-data:/opt/rcon-web-admin/db
+    networks:
+      - mc-rcon
+  luckperms:
+    container_name: luckperms
+    hostname: luckperms
+    image: mariadb
+    restart: unless-stopped
+    expose:
+      - 3306
+    volumes:
+      - luckperms-data:/var/lib/mysql
+    command: '--default-authentication-plugin=mysql_native_password --wait-timeout=28800'
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${LUCKPERMS_DB}
+      MYSQL_USER: ${LUCKPERMS_DB_USER} 
+      MYSQL_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
+    networks:
+      - mc-network
+  mc-proxy:
+    container_name: mc-proxy
+    hostname: mc-proxy
+    image: itzg/mc-proxy
+    restart: unless-stopped
+    ports:
+      - "25565:25565/tcp"
+      - "25565:25565/udp"
+    volumes:
+      - mc-proxy-data:/server
+      - ./config/proxy:/config
+    environment:
+      TYPE: VELOCITY
+      MINECRAFT_VERSION: 1.20.1
+      REPLACE_ENV_DURING_SYNC: "TRUE"
+      CFG_VELOCITY_SECRET: ${VELOCITY_SECRET}
+      CFG_LUCKPERMS_DB: ${LUCKPERMS_DB}
+      CFG_LUCKPERMS_DB_USER: ${LUCKPERMS_DB_USER}
+      CFG_LUCKPERMS_DB_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
+      CFG_DISCORD_BOT_API_TOKEN: ${DISCORD_BOT_API_TOKEN}
+      CFG_DISCORD_CHANNEL_ID: ${DISCORD_CHANNEL_ID}
+      CFG_DISCORD_WEBHOOK: ${DISCORD_WEBHOOK}
+      MODRINTH_PROJECTS: |
+        simple-voice-chat:gN7gtGyZ
+        luckperms:ACa3exrC
+    networks:
+      - mc-network
+    depends_on:
+      - luckperms
+      - mc-survival
+      - mc-creative
+  mc-survival:
+    container_name: mc-survival
+    hostname: mc-survival
+    build: .
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    image: itzg/minecraft-server
+    expose:
+      - "25565:25565/tcp"
+      - "25565:24454/udp"
+    environment:
+      EULA: true
+      MODE: survival
+      DIFFICULTY: hard
+      MODPACK_PLATFORM: MODRINTH
+      MODRINTH_MODPACK: /modpack/aloha-snack-bar-s3.mrpack
+      USE_AIKAR_FLAGS: "TRUE"
+      REPLACE_ENV_DURING_SYNC: "TRUE"
+      COPY_CONFIG_DEST: /data
+      INIT_MEMORY: 4G
+      MAX_MEMORY: 16G
+      JVM_XX_OPTS: |
+        -XX:+UnlockExperimentalVMOptions
+        -XX:G1NewSizePercent=40
+        -XX:G1MaxNewSizePercent=50
+        -XX:G1HeapRegionSize=16M
+        -XX:G1ReservePercent=15
+        -XX:InitiatingHeapOccupancyPercent=20
+      CFG_SERVER_NAME: survival
+      CFG_VELOCITY_SECRET: ${VELOCITY_SECRET}
+      CFG_LUCKPERMS_DB: ${LUCKPERMS_DB}
+      CFG_LUCKPERMS_DB_USER: ${LUCKPERMS_DB_USER}
+      CFG_LUCKPERMS_DB_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
+      RCON_PASSWORD: ${MC_RCON_PASSWORD}
+      MODRINTH_PROJECTS: |
+        fabricproxy-lite:XJmDAnj5
+        luckperms:7PNj6nCm
+        crossstitch:dJioNlO8
+        fastback:Q8JSGhdj
+        c2me-fabric:s4WOiNtz
+        vmp-fabric:sV8lIBhJ
+        threadtweak:gBP1GqtK
+        alternate-current:ckuIQWvo
+    volumes:
+      - mc-survival-data:/data
+      - ./config/minecraft:/config
+      - ./modpack:/modpack:ro
+    depends_on:
+      - luckperms
+    networks:
+      - mc-network
+      - mc-rcon
+  mc-creative:
+    container_name: mc-creative
+    hostname: mc-creative
+    build: .
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    image: itzg/minecraft-server
+    expose:
+      - "25565:25565/tcp"
+      - "25565:24454/udp"
+    environment:
+      EULA: true
+      MODE: creative
+      LEVEL_TYPE: FLAT
+      TYPE: FABRIC
+      VERSION: 1.20.1
+      GENERATOR_SETTINGS: >-4
+          {
+              "layers": [
+                  {
+                      "block": "minecraft:white_stained_glass",
+                      "height": 1
+                  }
+              ]
+          }
+      GENERATE_STRUCTURES: false
+      USE_AIKAR_FLAGS: "TRUE"
+      REPLACE_ENV_DURING_SYNC: "TRUE"
+      COPY_CONFIG_DEST: /data
+      INIT_MEMORY: 1G
+      MAX_MEMORY: 4G
+      JVM_XX_OPTS: |
+        -XX:+UnlockExperimentalVMOptions
+        -XX:G1NewSizePercent=40
+        -XX:G1MaxNewSizePercent=50
+        -XX:G1HeapRegionSize=16M
+        -XX:G1ReservePercent=15
+        -XX:InitiatingHeapOccupancyPercent=20
+      CFG_SERVER_NAME: creative
+      CFG_VELOCITY_SECRET: ${VELOCITY_SECRET}
+      CFG_LUCKPERMS_DB: ${LUCKPERMS_DB}
+      CFG_LUCKPERMS_DB_USER: ${LUCKPERMS_DB_USER}
+      CFG_LUCKPERMS_DB_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
+      MODRINTH_DOWNLOAD_DEPENDENCIES: required
+      MODRINTH_PROJECTS: |
+        fabricproxy-lite:XJmDAnj5
+        luckperms:7PNj6nCm
+        crossstitch:dJioNlO8
+        fastback:Q8JSGhdj
+        c2me-fabric:s4WOiNtz
+        vmp-fabric:sV8lIBhJ
+        threadtweak:gBP1GqtK
+        alternate-current:ckuIQWvo
+    volumes:
+      - mc-creative-data:/data
+      - ./config/minecraft:/config
+    depends_on:
+      - luckperms
+    networks:
+      - mc-network
+      - mc-rcon
+volumes:
+  rcon-data: {}
+  luckperms-data: {}
+  mc-survival-data: {}
+  mc-creative-data: {}
+  mc-proxy-data: {}
+networks:
+  mc-network:
+    driver: bridge
+  mc-rcon:
+    driver: bridge
