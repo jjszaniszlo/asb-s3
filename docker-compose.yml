@@ -81,9 +81,10 @@ services:
       EULA: true
       MODE: survival
       DIFFICULTY: hard
+      SEED: 188557497422300983
       MODPACK_PLATFORM: MODRINTH
       MODRINTH_MODPACK: /modpack/aloha-snack-bar-s3.mrpack
-      USE_AIKAR_FLAGS: "TRUE"
+      USE_MEOWICE_FLAGS: "TRUE"
       REPLACE_ENV_DURING_SYNC: "TRUE"
       COPY_CONFIG_DEST: /data
       INIT_MEMORY: 4G
@@ -136,17 +137,8 @@ services:
       LEVEL_TYPE: FLAT
       TYPE: FABRIC
       VERSION: 1.20.1
-      GENERATOR_SETTINGS: >-4
-          {
-              "layers": [
-                  {
-                      "block": "minecraft:white_stained_glass",
-                      "height": 1
-                  }
-              ]
-          }
       GENERATE_STRUCTURES: false
-      USE_AIKAR_FLAGS: "TRUE"
+      USE_MEOWICE_FLAGS: "TRUE"
       REPLACE_ENV_DURING_SYNC: "TRUE"
       COPY_CONFIG_DEST: /data
       INIT_MEMORY: 1G
