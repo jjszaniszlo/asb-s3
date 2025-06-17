@@ -1,0 +1,55 @@
+services:
+  mc:
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    image: itzg/minecraft-server:java21-graalvm
+    expose:
+      - "25565:25565/tcp"
+      - "25565:24454/udp"
+    environment:
+      EULA: true
+      VERSION: 1.20.1
+      TYPE: FABRIC
+      INIT_MEMORY: 1G
+      USE_MEOWICE_FLAGS: "TRUE"
+      REPLACE_ENV_DURING_SYNC: "TRUE"
+      COPY_CONFIG_DEST: /data
+      JVM_XX_OPTS: |
+        -XX:+UnlockExperimentalVMOptions
+        -XX:G1NewSizePercent=40
+        -XX:G1MaxNewSizePercent=50
+        -XX:G1HeapRegionSize=16M
+        -XX:G1ReservePercent=15
+        -XX:InitiatingHeapOccupancyPercent=20
+      CFG_VELOCITY_SECRET: ${VELOCITY_SECRET}
+      CFG_LUCKPERMS_DB: ${LUCKPERMS_DB}
+      CFG_LUCKPERMS_DB_USER: ${LUCKPERMS_DB_USER}
+      CFG_LUCKPERMS_DB_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
+      CFG_DISCORD_BOT_API_TOKEN: ${DISCORD_BOT_API_TOKEN}
+      CFG_DISCORD_CHANNEL_ID: ${DISCORD_CHANNEL_ID}
+      CFG_DISCORD_WEBHOOK: ${DISCORD_WEBHOOK}
+      RCON_PASSWORD: ${MC_RCON_PASSWORD}
+      MODRINTH_ALLOWED_VERSION_TYPE: beta
+      MODRINTH_DOWNLOAD_DEPENDENCIES: required
+      MODRINTH_PROJECTS: |
+        carpet:K0Wj117C
+        fabricproxy-lite:XJmDAnj5
+        luckperms:7PNj6nCm
+        crossstitch:dJioNlO8
+        c2me-fabric:s4WOiNtz
+        vmp-fabric:sV8lIBhJ
+        threadtweak:gBP1GqtK
+        alternate-current:ckuIQWvo
+        recipecooldown:oe5KEgWu
+        entity-view-distance:piYJfUyC
+        tt20:qmNvXoqy
+        lmd:rOkgwJ12
+        placeholder-api:DaV2ycYi
+        audioplayer:hDi749ai
+        vanilla-permissions:Qw3egHgT
+        servercore:m978FuzE
+        image2map:T71Apams
+        mysql-jdbc:94JxXm7O
+        sdlink:U3TpSJoR
+        styled-chat:pwr7uYCH

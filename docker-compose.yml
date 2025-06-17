@@ -54,9 +54,6 @@ services:
       CFG_LUCKPERMS_DB: ${LUCKPERMS_DB}
       CFG_LUCKPERMS_DB_USER: ${LUCKPERMS_DB_USER}
       CFG_LUCKPERMS_DB_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
-      CFG_DISCORD_BOT_API_TOKEN: ${DISCORD_BOT_API_TOKEN}
-      CFG_DISCORD_CHANNEL_ID: ${DISCORD_CHANNEL_ID}
-      CFG_DISCORD_WEBHOOK: ${DISCORD_WEBHOOK}
       MODRINTH_PROJECTS: |
         simple-voice-chat:gN7gtGyZ
         luckperms:ACa3exrC
@@ -69,52 +66,21 @@ services:
   mc-survival:
     container_name: mc-survival
     hostname: mc-survival
-    build: .
-    tty: true
-    stdin_open: true
-    restart: unless-stopped
-    image: itzg/minecraft-server
-    expose:
-      - "25565:25565/tcp"
-      - "25565:24454/udp"
+    extends:
+      file: mc-common.yml
+      service: mc
     environment:
-      EULA: true
       MODE: survival
       DIFFICULTY: hard
       SEED: 188557497422300983
       MODPACK_PLATFORM: MODRINTH
       MODRINTH_MODPACK: /modpack/aloha-snack-bar-s3.mrpack
-      USE_MEOWICE_FLAGS: "TRUE"
-      REPLACE_ENV_DURING_SYNC: "TRUE"
-      COPY_CONFIG_DEST: /data
-      INIT_MEMORY: 4G
       MAX_MEMORY: 16G
-      JVM_XX_OPTS: |
-        -XX:+UnlockExperimentalVMOptions
-        -XX:G1NewSizePercent=40
-        -XX:G1MaxNewSizePercent=50
-        -XX:G1HeapRegionSize=16M
-        -XX:G1ReservePercent=15
-        -XX:InitiatingHeapOccupancyPercent=20
       CFG_SERVER_NAME: survival
-      CFG_VELOCITY_SECRET: ${VELOCITY_SECRET}
-      CFG_LUCKPERMS_DB: ${LUCKPERMS_DB}
-      CFG_LUCKPERMS_DB_USER: ${LUCKPERMS_DB_USER}
-      CFG_LUCKPERMS_DB_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
-      RCON_PASSWORD: ${MC_RCON_PASSWORD}
-      MODRINTH_PROJECTS: |
-        fabricproxy-lite:XJmDAnj5
-        luckperms:7PNj6nCm
-        crossstitch:dJioNlO8
-        fastback:Q8JSGhdj
-        c2me-fabric:s4WOiNtz
-        vmp-fabric:sV8lIBhJ
-        threadtweak:gBP1GqtK
-        alternate-current:ckuIQWvo
     volumes:
       - mc-survival-data:/data
-      - ./config/minecraft:/config
       - ./modpack:/modpack:ro
+      - ./config/minecraft:/config
     depends_on:
       - luckperms
     networks:
@@ -123,48 +89,52 @@ services:
   mc-creative:
     container_name: mc-creative
     hostname: mc-creative
-    build: .
-    tty: true
-    stdin_open: true
-    restart: unless-stopped
-    image: itzg/minecraft-server
-    expose:
-      - "25565:25565/tcp"
-      - "25565:24454/udp"
+    extends:
+      file: mc-common.yml
+      service: mc
     environment:
-      EULA: true
       MODE: creative
       LEVEL_TYPE: FLAT
-      TYPE: FABRIC
-      VERSION: 1.20.1
       GENERATE_STRUCTURES: false
-      USE_MEOWICE_FLAGS: "TRUE"
-      REPLACE_ENV_DURING_SYNC: "TRUE"
-      COPY_CONFIG_DEST: /data
-      INIT_MEMORY: 1G
       MAX_MEMORY: 4G
-      JVM_XX_OPTS: |
-        -XX:+UnlockExperimentalVMOptions
-        -XX:G1NewSizePercent=40
-        -XX:G1MaxNewSizePercent=50
-        -XX:G1HeapRegionSize=16M
-        -XX:G1ReservePercent=15
-        -XX:InitiatingHeapOccupancyPercent=20
       CFG_SERVER_NAME: creative
-      CFG_VELOCITY_SECRET: ${VELOCITY_SECRET}
-      CFG_LUCKPERMS_DB: ${LUCKPERMS_DB}
-      CFG_LUCKPERMS_DB_USER: ${LUCKPERMS_DB_USER}
-      CFG_LUCKPERMS_DB_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
-      MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
+        carpet:K0Wj117C
         fabricproxy-lite:XJmDAnj5
         luckperms:7PNj6nCm
         crossstitch:dJioNlO8
-        fastback:Q8JSGhdj
         c2me-fabric:s4WOiNtz
         vmp-fabric:sV8lIBhJ
         threadtweak:gBP1GqtK
         alternate-current:ckuIQWvo
+        recipecooldown:oe5KEgWu
+        entity-view-distance:piYJfUyC
+        tt20:qmNvXoqy
+        lmd:rOkgwJ12
+        placeholder-api:DaV2ycYi
+        audioplayer:hDi749ai
+        vanilla-permissions:Qw3egHgT
+        servercore:m978FuzE
+        image2map:T71Apams
+        mysql-jdbc:94JxXm7O
+        sdlink:U3TpSJoR
+        styled-chat:pwr7uYCH
+
+        axiom:61myQqfU
+        abstract:8T0l0QkL
+        botania:t7kGxx07
+        built:ONN2RViA
+        clutter:t7kGxx07
+        convenient-decor:JrcEJiEH
+        distanthorizons:vSDePnsB
+        ferrite-core:unerR5MN
+        krypton:jiDwS0W1
+        lithium:vuuAe7ZA
+        macaws-stairs:XNlrOt9m
+        memoryleakfix:5xvCCRjJ
+        noisium:erSJnRcq
+        spark:XGW2fviP
+        starlight:XGIsoVGT
     volumes:
       - mc-creative-data:/data
       - ./config/minecraft:/config
