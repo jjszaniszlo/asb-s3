@@ -5,11 +5,14 @@
 		"origins:pumpkin_hate",
 		"origins:extra_reach",
 		"origins:ender_particles",
-		"origins:damage_from_potions"
+		"origins:damage_from_potions",
+        "orbasb:vwoop"
 	],
 	"icon": {
 		"item": "minecraft:ender_pearl"
 	},
-	"order": 2,
-	"impact": 2
+	"order": 1,
+	"impact": 2,
+	"loading_priority": 9,
+	"unchoosable": false
 }
