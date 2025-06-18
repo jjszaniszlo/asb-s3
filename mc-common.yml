@@ -35,7 +35,6 @@ services:
       MODRINTH_PROJECTS: |
         alternate-current:ckuIQWvo
         audioplayer:hDi749ai
-        c2me-fabric:s4WOiNtz
         carpet:K0Wj117C
         chunky:NHWYq9at
         crossstitch:dJioNlO8
@@ -49,7 +48,7 @@ services:
         recipecooldown:oe5KEgWu
         sdlink:U3TpSJoR
         servercore:m978FuzE
-        styled-chat:pwr7uYCH
+        solstice-essentials:fmCpQgOo
         threadtweak:gBP1GqtK
         tt20:qmNvXoqy
         vanilla-permissions:Qw3egHgT
