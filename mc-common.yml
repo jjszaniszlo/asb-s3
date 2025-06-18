@@ -33,23 +33,24 @@ services:
       MODRINTH_ALLOWED_VERSION_TYPE: beta
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
-        carpet:K0Wj117C
-        fabricproxy-lite:XJmDAnj5
-        luckperms:7PNj6nCm
-        crossstitch:dJioNlO8
-        c2me-fabric:s4WOiNtz
-        vmp-fabric:sV8lIBhJ
-        threadtweak:gBP1GqtK
         alternate-current:ckuIQWvo
-        recipecooldown:oe5KEgWu
-        entity-view-distance:piYJfUyC
-        tt20:qmNvXoqy
-        lmd:rOkgwJ12
-        placeholder-api:DaV2ycYi
         audioplayer:hDi749ai
-        vanilla-permissions:Qw3egHgT
-        servercore:m978FuzE
+        c2me-fabric:s4WOiNtz
+        carpet:K0Wj117C
+        chunky:NHWYq9at
+        crossstitch:dJioNlO8
+        entity-view-distance:piYJfUyC
+        fabricproxy-lite:XJmDAnj5
         image2map:T71Apams
+        lmd:rOkgwJ12
+        luckperms:7PNj6nCm
         mysql-jdbc:94JxXm7O
+        placeholder-api:DaV2ycYi
+        recipecooldown:oe5KEgWu
         sdlink:U3TpSJoR
+        servercore:m978FuzE
         styled-chat:pwr7uYCH
+        threadtweak:gBP1GqtK
+        tt20:qmNvXoqy
+        vanilla-permissions:Qw3egHgT
+        vmp-fabric:sV8lIBhJ
