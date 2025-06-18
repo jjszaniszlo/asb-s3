@@ -43,10 +43,13 @@ services:
       MODRINTH_MODPACK: /modpack/aloha-snack-bar-s3.mrpack
       MAX_MEMORY: 16G
       CFG_SERVER_NAME: survival
+      DATAPACKS: /datapacks
+      REMOVE_OLD_DATAPACKS: true
     volumes:
       - mc-survival-data:/data
-      - ./modpack:/modpack:ro
       - ./config/minecraft:/config
+      - ./datapacks:/datapacks:ro
+      - ./modpack:/modpack:ro
     depends_on:
       - luckperms
     networks:

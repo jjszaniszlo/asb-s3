@@ -1,4 +1,646 @@
 {
   "performVersionCheck": false,
-  "origins": {}
+  "origins": {
+    "ea:fire_avian": {
+      "enabled": true,
+      "origins:slow_falling": true,
+      "origins:fire_immunity": true,
+      "ea:calming_flames": true,
+      "origins:tailwind": true,
+      "origins:vegetarian": true,
+      "ea:water_weakness": true,
+      "origins:damage_from_snowballs": true
+    },
+    "origins:elytrian": {
+      "enabled": true,
+      "origins:elytra": true,
+      "origins:launch_into_air": true,
+      "origins:aerial_combatant": true,
+      "origins:light_armor": true,
+      "origins:claustrophobia": true,
+      "origins:more_kinetic_damage": true
+    },
+    "ea:wind_enderian": {
+      "enabled": true,
+      "origins:throw_ender_pearl": true,
+      "origins:water_vulnerability": true,
+      "origins:pumpkin_hate": true,
+      "ea:wind_arrow": true,
+      "origins:tailwind": true,
+      "origins:extra_reach": true,
+      "ea:scared_of_dark": true,
+      "origins:ender_particles": true,
+      "origins:damage_from_potions": true
+    },
+    "ea:earth_enderian": {
+      "enabled": true,
+      "origins:throw_ender_pearl": true,
+      "origins:water_vulnerability": true,
+      "origins:pumpkin_hate": true,
+      "origins:extra_reach": true,
+      "ea:shulker_inventory": true,
+      "ea:end_miner": true,
+      "origins:strong_arms": true,
+      "origins:strong_arms_break_speed": true,
+      "origins:fragile": true,
+      "ea:scared_of_heights": true,
+      "origins:ender_particles": true,
+      "origins:damage_from_potions": true
+    },
+    "ea:wind_basic": {
+      "enabled": true,
+      "ea:double_jump": true,
+      "ea:can_double_jump": true,
+      "origins:claustrophobia": true
+    },
+    "ea:earth": {
+      "enabled": true,
+      "ea:earth_align": true
+    },
+    "ea:fire_feline": {
+      "enabled": true,
+      "origins:nether_spawn": true,
+      "origins:fall_immunity": true,
+      "ea:fire_resistance": true,
+      "origins:burning_wrath": true,
+      "origins:sprint_jump": true,
+      "origins:velvet_paws": true,
+      "origins:nine_lives": true,
+      "origins:weak_arms": true,
+      "ea:minor_hydrophobia": true,
+      "origins:scare_creepers": true,
+      "origins:cat_vision": true
+    },
+    "origins-sizes:tiny": {
+      "enabled": true,
+      "origins-sizes:tiny": true
+    },
+    "origins:blazeborn": {
+      "enabled": true,
+      "origins:fire_immunity": true,
+      "origins:nether_spawn": true,
+      "origins:burning_wrath": true,
+      "origins:hotblooded": true,
+      "origins:water_vulnerability": true,
+      "origins:flame_particles": true,
+      "origins:damage_from_snowballs": true,
+      "origins:damage_from_potions": true
+    },
+    "ea:water_avian": {
+      "enabled": true,
+      "origins:slow_falling": true,
+      "ea:buoyant": true,
+      "ea:more_air": true,
+      "origins:like_air": true,
+      "origins:tailwind": true,
+      "ea:flammable": true,
+      "origins:vegetarian": true
+    },
+    "ea:earth_basic": {
+      "enabled": true,
+      "origins:cat_vision": true,
+      "ea:agoraphobia": true
+    },
+    "origins-sizes:normal": {
+      "enabled": true,
+      "origins-sizes:normal": true
+    },
+    "ea:earth_feline": {
+      "enabled": true,
+      "origins:fall_immunity": true,
+      "ea:weak_legs": true,
+      "origins:velvet_paws": true,
+      "origins:nine_lives": true,
+      "origins:scare_creepers": true,
+      "origins:cat_vision": true,
+      "origins:more_exhaustion": true
+    },
+    "ea:fire_merling": {
+      "enabled": true,
+      "origins:nether_spawn": true,
+      "origins:fire_immunity": true,
+      "origins:water_vulnerability": true,
+      "ea:lava_gills": true,
+      "ea:lava_eyes": true,
+      "ea:lava_affinity": true,
+      "ea:lava_fins": true,
+      "ea:like_lava": true,
+      "origins:aquatic": true
+    },
+    "ea:fire_elytrian": {
+      "enabled": true,
+      "origins:elytra": true,
+      "ea:combustion": true,
+      "ea:fire_resistance": true,
+      "ea:flame_combatant": true,
+      "origins:light_armor": true,
+      "origins:claustrophobia": true,
+      "origins:more_kinetic_damage": true
+    },
+    "ea:wind_feline": {
+      "enabled": true,
+      "origins:fall_immunity": true,
+      "ea:can_double_jump": true,
+      "ea:double_jump": true,
+      "ea:dash": true,
+      "ea:damage_in_air": true,
+      "origins:velvet_paws": true,
+      "origins:nine_lives": true,
+      "origins:light_armor": true,
+      "origins:weak_arms": true,
+      "origins:scare_creepers": true,
+      "origins:cat_vision": true
+    },
+    "origins-sizes:big": {
+      "enabled": true,
+      "origins-sizes:big": true
+    },
+    "origins-sizes:small": {
+      "enabled": true,
+      "origins-sizes:small": true
+    },
+    "ea:wind_shulk": {
+      "enabled": true,
+      "origins:shulker_inventory": true,
+      "ea:levitation": true,
+      "ea:teleport": true,
+      "origins:natural_armor": true,
+      "origins:light_armor": true,
+      "origins:strong_arms": true,
+      "origins:strong_arms_break_speed": true,
+      "origins:no_shield": true,
+      "origins:more_exhaustion": true
+    },
+    "ea:fire_blazeborn": {
+      "enabled": true,
+      "origins:fire_immunity": true,
+      "origins:nether_spawn": true,
+      "ea:fireball": true,
+      "origins:burning_wrath": true,
+      "ea:heat_meter": true,
+      "ea:fill_heat": true,
+      "ea:rage_mode": true,
+      "ea:rage": true,
+      "origins:hotblooded": true,
+      "origins:water_vulnerability": true,
+      "ea:extinguish": true,
+      "origins:flame_particles": true,
+      "origins:damage_from_snowballs": true,
+      "origins:damage_from_potions": true
+    },
+    "ea:none": {
+      "enabled": true
+    },
+    "ea:fire": {
+      "enabled": true,
+      "ea:fire_align": true
+    },
+    "ea:fire_enderian": {
+      "enabled": true,
+      "ea:warped_home": true,
+      "origins:throw_ender_pearl": true,
+      "origins:fire_immunity": true,
+      "ea:extreme_hydrophobia": true,
+      "origins:pumpkin_hate": true,
+      "origins:extra_reach": true,
+      "origins:ender_particles": true,
+      "origins:flame_particles": true,
+      "origins:damage_from_potions": true
+    },
+    "origins-sizes:gargantuan": {
+      "enabled": true,
+      "origins-sizes:gargantuan": true
+    },
+    "ea:water_elytrian": {
+      "enabled": true,
+      "ea:winged": true,
+      "origins:launch_into_air": true,
+      "origins:aerial_combatant": true,
+      "ea:water_breathing": true,
+      "ea:fluidity": true,
+      "ea:flammable_wings": true,
+      "ea:burn_wings": true,
+      "origins:light_armor": true,
+      "origins:more_kinetic_damage": true
+    },
+    "origins-sizes:massive": {
+      "enabled": true,
+      "origins-sizes:massive": true
+    },
+    "ea:water_feline": {
+      "enabled": true,
+      "origins:fall_immunity": true,
+      "origins:sprint_jump": true,
+      "origins:velvet_paws": true,
+      "origins:nine_lives": true,
+      "ea:more_air": true,
+      "ea:not_fins": true,
+      "ea:extra_flammable": true,
+      "origins:weak_arms": true,
+      "origins:scare_creepers": true,
+      "ea:perfect_eyes": true
+    },
+    "ea:water_blazeborn": {
+      "enabled": true,
+      "ea:frost_immunity": true,
+      "ea:overworld_spawn": true,
+      "ea:iceball": true,
+      "ea:freeze": true,
+      "ea:frost_feet": true,
+      "ea:melting": true,
+      "ea:very_flammable": true,
+      "origins:flame_particles": true
+    },
+    "ea:water_merling": {
+      "enabled": true,
+      "origins:water_breathing": true,
+      "origins:water_vision": true,
+      "origins:aqua_affinity": true,
+      "ea:trident_mastery": true,
+      "ea:big_fins": true,
+      "origins:like_water": true,
+      "ea:lose_air": true,
+      "origins:aquatic": true,
+      "origins:conduit_power_on_land": true,
+      "origins:air_from_potions": true
+    },
+    "origins:enderian": {
+      "enabled": true,
+      "origins:throw_ender_pearl": true,
+      "origins:water_vulnerability": true,
+      "origins:pumpkin_hate": true,
+      "origins:extra_reach": true,
+      "origins:ender_particles": true,
+      "origins:damage_from_potions": true
+    },
+    "ea:wind_phantom": {
+      "enabled": true,
+      "origins:phantomize": true,
+      "origins:translucent": true,
+      "ea:elytra_phasing": true,
+      "ea:flap": true,
+      "origins:invisibility": true,
+      "origins:burn_in_daylight": true,
+      "ea:danger_averse": true,
+      "origins:hunger_over_time": true,
+      "origins:fragile": true,
+      "ea:light_armor": true,
+      "ea:phantom_overlay": true
+    },
+    "origins:feline": {
+      "enabled": true,
+      "origins:fall_immunity": true,
+      "origins:sprint_jump": true,
+      "origins:velvet_paws": true,
+      "origins:nine_lives": true,
+      "origins:weak_arms": true,
+      "origins:scare_creepers": true,
+      "origins:cat_vision": true
+    },
+    "ea:earth_phantom": {
+      "enabled": true,
+      "origins:phantomize": true,
+      "origins:translucent": true,
+      "ea:better_phasing": true,
+      "origins:invisibility": true,
+      "ea:break_speed": true,
+      "origins:burn_in_daylight": true,
+      "origins:hunger_over_time": true,
+      "ea:grounded": true,
+      "ea:flammable": true,
+      "origins:fragile": true,
+      "ea:phantom_overlay": true
+    },
+    "ea:water": {
+      "enabled": true,
+      "ea:water_align": true
+    },
+    "ea:fire_shulk": {
+      "enabled": true,
+      "origins:shulker_inventory": true,
+      "origins:natural_armor": true,
+      "ea:fire_absorbtion": true,
+      "ea:fire_charges": false,
+      "origins:strong_arms": true,
+      "origins:strong_arms_break_speed": true,
+      "origins:no_shield": true,
+      "ea:heavy": true,
+      "ea:cold_blooded": true,
+      "origins:more_exhaustion": true
+    },
+    "ea:fire_arachnid": {
+      "enabled": true,
+      "origins:fragile": true,
+      "origins:fire_immunity": true,
+      "ea:set_on_fire": true,
+      "ea:flaming_fists": true,
+      "origins:climbing": true,
+      "origins:master_of_webs": true,
+      "ea:minor_hydrophobia": true,
+      "origins:arthropod": true,
+      "origins:carnivore": true
+    },
+    "origins-sizes:micro": {
+      "enabled": true,
+      "origins-sizes:micro": true
+    },
+    "ea:wind_elytrian": {
+      "enabled": true,
+      "origins:elytra": true,
+      "ea:gift_of_winds_plus": true,
+      "origins:aerial_combatant": true,
+      "ea:extreme_claustrophobia": true,
+      "origins:light_armor": true,
+      "origins:more_kinetic_damage": true
+    },
+    "ea:earth_arachnid": {
+      "enabled": true,
+      "ea:extra_fragile": true,
+      "origins:cat_vision": true,
+      "origins:climbing": true,
+      "origins:master_of_webs": true,
+      "ea:venomous": true,
+      "origins:arthropod": true,
+      "origins:carnivore": true
+    },
+    "ea:wind_arachnid": {
+      "enabled": true,
+      "origins:fragile": true,
+      "origins:climbing": true,
+      "ea:leap": true,
+      "origins:fall_immunity": true,
+      "origins:master_of_webs": true,
+      "origins:arthropod": true,
+      "ea:scared_of_dark": true,
+      "origins:carnivore": true
+    },
+    "ea:earth_blazeborn": {
+      "enabled": true,
+      "origins:fire_immunity": true,
+      "origins:nether_spawn": true,
+      "origins:burning_wrath": true,
+      "ea:explosive_miner": false,
+      "ea:explosive_miner_toggle": false,
+      "ea:explosive_miner_toggle_toggle": false,
+      "ea:explosion_immunity": false,
+      "origins:hotblooded": true,
+      "origins:fragile": true,
+      "origins:water_vulnerability": true,
+      "origins:flame_particles": true,
+      "origins:damage_from_snowballs": true,
+      "origins:damage_from_potions": true
+    },
+    "origins:phantom": {
+      "enabled": true,
+      "origins:phantomize": true,
+      "origins:translucent": true,
+      "origins:phasing": true,
+      "origins:invisibility": true,
+      "origins:burn_in_daylight": true,
+      "origins:hunger_over_time": true,
+      "origins:fragile": true,
+      "origins:phantomize_overlay": true
+    },
+    "ea:water_phantom": {
+      "enabled": true,
+      "origins:phantomize": true,
+      "origins:translucent": true,
+      "origins:phasing": true,
+      "origins:invisibility": true,
+      "ea:not_fins": true,
+      "ea:undead": true,
+      "origins:burn_in_daylight": true,
+      "ea:extremely_flammable": true,
+      "origins:hunger_over_time": true,
+      "origins:fragile": true,
+      "ea:phantom_overlay": true
+    },
+    "origins:avian": {
+      "enabled": true,
+      "origins:slow_falling": true,
+      "origins:fresh_air": true,
+      "origins:like_air": true,
+      "origins:tailwind": true,
+      "origins:lay_eggs": true,
+      "origins:vegetarian": true
+    },
+    "ea:earth_shulk": {
+      "enabled": true,
+      "origins:shulker_inventory": true,
+      "ea:extra_sturdy": true,
+      "origins:strong_arms": true,
+      "origins:strong_arms_break_speed": true,
+      "ea:super_pickaxes": true,
+      "ea:super_pickaxes_toggle": true,
+      "origins:no_shield": true,
+      "ea:grounded": true,
+      "origins:more_exhaustion": true
+    },
+    "ea:water_arachnid": {
+      "enabled": true,
+      "origins:fragile": true,
+      "origins:climbing": true,
+      "origins:master_of_webs": true,
+      "ea:depth_strider": true,
+      "ea:more_air": true,
+      "ea:flammable": true,
+      "origins:arthropod": true,
+      "origins:carnivore": true
+    },
+    "ea:wind": {
+      "enabled": true,
+      "ea:wind_align": true
+    },
+    "origins_vampire:vampire": {
+      "enabled": true,
+      "origins_vampire:bat_form": true,
+      "origins_vampire:diet": true,
+      "origins_vampire:health_regeneration": true,
+      "origins_vampire:undead": true,
+      "origins_vampire:weakness/wooden_tools": true,
+      "origins_vampire:blood/drink/ender_dragon": true
+    },
+    "ea:water_basic": {
+      "enabled": true,
+      "ea:more_air": true,
+      "ea:flammable": true
+    },
+    "ea:water_enderian": {
+      "enabled": true,
+      "origins:throw_ender_pearl": true,
+      "ea:flammable": true,
+      "ea:nether_weakness": true,
+      "ea:not_fins": true,
+      "origins:pumpkin_hate": true,
+      "origins:extra_reach": true,
+      "origins:ender_particles": true
+    },
+    "origins_vampire:vampire_lord": {
+      "enabled": true,
+      "origins_vampire:flight/wing_flap": false,
+      "origins_vampire:bat_form": true,
+      "origins_vampire:diet": true,
+      "origins_vampire:health_regeneration": true,
+      "origins_vampire:hunters_instinct": true,
+      "origins_vampire:undead": true,
+      "origins_vampire:weakness/wooden_tools": true
+    },
+    "ea:water_shulk": {
+      "enabled": true,
+      "origins:shulker_inventory": true,
+      "origins:natural_armor": true,
+      "ea:water_absorbtion": true,
+      "ea:water_charges": false,
+      "origins:strong_arms": true,
+      "origins:strong_arms_break_speed": true,
+      "ea:more_air": true,
+      "origins:no_shield": true,
+      "ea:flammable": true,
+      "ea:heat_weakness": true,
+      "origins:more_exhaustion": true
+    },
+    "origins:human": {
+      "enabled": true
+    },
+    "ea:wind_blazeborn": {
+      "enabled": true,
+      "origins:fire_immunity": true,
+      "origins:nether_spawn": true,
+      "origins:burning_wrath": true,
+      "ea:heat_meter": true,
+      "ea:fill_heat": true,
+      "ea:heat_drain": true,
+      "ea:blaze_flight": true,
+      "ea:blaze_flight_toggle": true,
+      "ea:blaze_bool": true,
+      "origins:hotblooded": true,
+      "ea:extreme_hydrophobia": true,
+      "origins:flame_particles": true,
+      "origins:damage_from_snowballs": true,
+      "origins:damage_from_potions": true
+    },
+    "ea:earth_merling": {
+      "enabled": true,
+      "origins:water_breathing": true,
+      "origins:water_vision": true,
+      "origins:aqua_affinity": true,
+      "ea:water_replace": true,
+      "origins:swim_speed": true,
+      "origins:like_water": true,
+      "ea:thalassophobia": true,
+      "origins:aquatic": true,
+      "origins:conduit_power_on_land": true,
+      "origins:air_from_potions": true
+    },
+    "ea:fire_basic": {
+      "enabled": true,
+      "ea:fire_resistance": true,
+      "ea:water_weakness": true
+    },
+    "origins:shulk": {
+      "enabled": true,
+      "origins:shulker_inventory": true,
+      "origins:natural_armor": true,
+      "origins:strong_arms": true,
+      "origins:strong_arms_break_speed": true,
+      "origins:no_shield": true,
+      "origins:more_exhaustion": true
+    },
+    "ea:wind_merling": {
+      "enabled": true,
+      "origins:water_breathing": true,
+      "origins:water_vision": true,
+      "origins:aqua_affinity": true,
+      "origins:swim_speed": true,
+      "ea:propel": true,
+      "ea:more_air": true,
+      "origins:like_water": true,
+      "origins:claustrophobia": true,
+      "origins:aquatic": true,
+      "origins:conduit_power_on_land": true,
+      "origins:air_from_potions": true
+    },
+    "origins:merling": {
+      "enabled": true,
+      "origins:water_breathing": true,
+      "origins:water_vision": true,
+      "origins:aqua_affinity": true,
+      "origins:swim_speed": true,
+      "origins:like_water": true,
+      "origins:aquatic": true,
+      "origins:conduit_power_on_land": true,
+      "origins:air_from_potions": true
+    },
+    "origins:arachnid": {
+      "enabled": true,
+      "origins:climbing": true,
+      "origins:master_of_webs": true,
+      "origins:carnivore": true,
+      "origins:fragile": true,
+      "origins:arthropod": true
+    },
+    "improved_inchling:improved_inchling": {
+      "enabled": true,
+      "improved_inchling:inchling_ascendancy": true,
+      "improved_inchling:minuscule_majesty": true,
+      "improved_inchling:companion_mounter": true,
+      "improved_inchling:silent_stride": true,
+      "improved_inchling:efficient_metabolism": true,
+      "improved_inchling:sugar_fueled_frenzy": true,
+      "improved_inchling:featherlight_glide": true,
+      "improved_inchling:nimble_nature": true,
+      "improved_inchling:delicate_dodger": true,
+      "improved_inchling:fragile_bones": true,
+      "improved_inchling:slow_miner": true,
+      "improved_inchling:delicate_swimmer": true,
+      "improved_inchling:burdened_armor": true
+    },
+    "ea:earth_avian": {
+      "enabled": true,
+      "origins:slow_falling": true,
+      "origins:cat_vision": true,
+      "ea:cave_comforts": true,
+      "origins:like_air": true,
+      "origins:tailwind": true,
+      "ea:scared_of_heights": true,
+      "origins:vegetarian": true
+    },
+    "ea:earth_elytrian": {
+      "enabled": true,
+      "origins:elytra": true,
+      "origins:launch_into_air": true,
+      "origins:aerial_combatant": true,
+      "origins:cat_vision": true,
+      "origins:light_armor": true,
+      "origins:fragile": true,
+      "ea:agoraphobia": true,
+      "ea:strong_bones": true
+    },
+    "ea:fire_phantom": {
+      "enabled": true,
+      "origins:phantomize": true,
+      "origins:translucent": true,
+      "origins:phasing": true,
+      "ea:fire_phasing": true,
+      "origins:invisibility": true,
+      "origins:burn_in_daylight": true,
+      "ea:nether_home": true,
+      "origins:hunger_over_time": true,
+      "ea:minor_hydrophobia": true,
+      "origins:fragile": true,
+      "ea:phantom_overlay": true
+    },
+    "ea:wind_avian": {
+      "enabled": true,
+      "origins:slow_falling": true,
+      "ea:double_jump": true,
+      "ea:can_double_jump": true,
+      "ea:flap": true,
+      "origins:fresh_air": true,
+      "origins:claustrophobia": true,
+      "origins:like_air": true,
+      "origins:tailwind": true,
+      "origins:vegetarian": true
+    }
+  }
 }
