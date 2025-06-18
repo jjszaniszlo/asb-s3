@@ -1,40 +1,4 @@
 services:
-  rcon:
-    container_name: rcon
-    hostname: rcon
-    image: itzg/rcon
-    restart: unless-stopped
-    ports:
-      - "4326:4326"
-      - "4327:4327"
-    environment:
-      REPLACE_ENV_DURING_SYNC: "TRUE"
-      RWA_RCON_PASSWORD: ${MC_RCON_PASSWORD}
-      RWA_ADMIN: "TRUE"
-      RWA_USERNAME: admin
-      RWA_PASSWORD: ${MC_RCON_USER_ADMIN_PASSWORD}
-      RWA_RCON_HOST: mc-survival
-    volumes:
-      - rcon-data:/opt/rcon-web-admin/db
-    networks:
-      - mc-rcon
-  luckperms:
-    container_name: luckperms
-    hostname: luckperms
-    image: mariadb
-    restart: unless-stopped
-    expose:
-      - 3306
-    volumes:
-      - luckperms-data:/var/lib/mysql
-    command: '--default-authentication-plugin=mysql_native_password --wait-timeout=28800'
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${LUCKPERMS_DB}
-      MYSQL_USER: ${LUCKPERMS_DB_USER} 
-      MYSQL_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
-    networks:
-      - mc-network
   mc-proxy:
     container_name: mc-proxy
     hostname: mc-proxy
@@ -43,9 +7,6 @@ services:
     ports:
       - "25565:25565/tcp"
       - "25565:25565/udp"
-    volumes:
-      - mc-proxy-data:/server
-      - ./config/proxy:/config
     environment:
       TYPE: VELOCITY
       MINECRAFT_VERSION: 1.20.1
@@ -57,12 +18,17 @@ services:
       MODRINTH_PROJECTS: |
         simple-voice-chat:gN7gtGyZ
         luckperms:ACa3exrC
-    networks:
-      - mc-network
+    volumes:
+      - mc-proxy-data:/server
+      - ./config/proxy:/config
     depends_on:
       - luckperms
       - mc-survival
       - mc-creative
+    networks:
+      - dbs
+      - mc-network
+
   mc-survival:
     container_name: mc-survival
     hostname: mc-survival
@@ -84,8 +50,10 @@ services:
     depends_on:
       - luckperms
     networks:
+      - dbs
       - mc-network
       - mc-rcon
+
   mc-creative:
     container_name: mc-creative
     hostname: mc-creative
@@ -98,13 +66,43 @@ services:
       GENERATE_STRUCTURES: false
       MAX_MEMORY: 4G
       CFG_SERVER_NAME: creative
+      GENERATOR_SETTINGS: >-4
+          {
+              "layers": [
+                  {
+                      "block": "minecraft:white_stained_glass",
+                      "height": 1
+                  }
+              ]
+          }
       MODRINTH_PROJECTS: |
+        carpet:K0Wj117C
+        fabricproxy-lite:XJmDAnj5
+        luckperms:7PNj6nCm
+        crossstitch:dJioNlO8
+        c2me-fabric:s4WOiNtz
+        vmp-fabric:sV8lIBhJ
+        threadtweak:gBP1GqtK
+        alternate-current:ckuIQWvo
+        recipecooldown:oe5KEgWu
+        entity-view-distance:piYJfUyC
+        tt20:qmNvXoqy
+        lmd:rOkgwJ12
+        placeholder-api:DaV2ycYi
+        audioplayer:hDi749ai
+        vanilla-permissions:Qw3egHgT
+        servercore:m978FuzE
+        image2map:T71Apams
+        mysql-jdbc:94JxXm7O
+        sdlink:U3TpSJoR
+        styled-chat:pwr7uYCH
         axiom:61myQqfU
         abstract:8T0l0QkL
         botania:t7kGxx07
         built:ONN2RViA
         clutter:t7kGxx07
         convenient-decor:JrcEJiEH
+        distanthorizons:vSDePnsB
         ferrite-core:unerR5MN
         krypton:jiDwS0W1
         lithium:vuuAe7ZA
@@ -119,15 +117,78 @@ services:
     depends_on:
       - luckperms
     networks:
+      - dbs
       - mc-network
       - mc-rcon
+
+  rcon:
+    container_name: rcon
+    hostname: rcon
+    image: itzg/rcon
+    restart: unless-stopped
+    ports:
+      - "4326:4326"
+    environment:
+      REPLACE_ENV_DURING_SYNC: "TRUE"
+      RWA_RCON_PASSWORD: ${MC_RCON_PASSWORD}
+      RWA_ADMIN: "TRUE"
+      RWA_USERNAME: admin
+      RWA_PASSWORD: ${MC_RCON_USER_ADMIN_PASSWORD}
+      RWA_RCON_HOST: mc-survival
+    volumes:
+      - mc-rcon-data:/opt/rcon-web-admin/db
+    networks:
+      - mc-rcon
+
+  backups:
+    container_name: backups
+    image: itzg/mc-backup
+    user: "1000"
+    environment:
+      BACKUP_INTERVAL: 12h
+      RCON_HOST: mc-survival
+      RCON_PASSWORD: ${MC_RCON_PASSWORD}
+    volumes:
+      - mc-survival-data:/data:ro
+      - ./mc-backups:/backups
+    networks:
+      - mc-rcon 
+
+  luckperms:
+    container_name: luckperms
+    hostname: luckperms
+    image: mariadb
+    restart: unless-stopped
+    expose:
+      - "3306"
+    volumes:
+      - luckperms-data:/var/lib/mysql
+    command: '--default-authentication-plugin=mysql_native_password --wait-timeout=28800'
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${LUCKPERMS_DB}
+      MYSQL_USER: ${LUCKPERMS_DB_USER} 
+      MYSQL_PASSWORD: ${LUCKPERMS_DB_PASSWORD}
+    networks:
+      - dbs
+
+  adminer:
+    image: adminer
+    ports:
+      - "8806:8080"
+    networks:
+      - dbs
+
 volumes:
-  rcon-data: {}
   luckperms-data: {}
-  mc-survival-data: {}
   mc-creative-data: {}
   mc-proxy-data: {}
+  mc-rcon-data: {}
+  mc-survival-data: {}
+
 networks:
+  dbs:
+    driver: bridge
   mc-network:
     driver: bridge
   mc-rcon:
