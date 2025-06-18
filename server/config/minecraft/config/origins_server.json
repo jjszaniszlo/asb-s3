@@ -22,7 +22,7 @@
     },
     "ea:wind_enderian": {
       "enabled": true,
-      "origins:throw_ender_pearl": true,
+      "orbasb:throw_ender_pearl": true,
       "origins:water_vulnerability": true,
       "origins:pumpkin_hate": true,
       "ea:wind_arrow": true,
@@ -34,7 +34,7 @@
     },
     "ea:earth_enderian": {
       "enabled": true,
-      "origins:throw_ender_pearl": true,
+      "orbasb:throw_ender_pearl": true,
       "origins:water_vulnerability": true,
       "origins:pumpkin_hate": true,
       "origins:extra_reach": true,
@@ -198,7 +198,7 @@
     "ea:fire_enderian": {
       "enabled": true,
       "ea:warped_home": true,
-      "origins:throw_ender_pearl": true,
+      "orbasb:throw_ender_pearl": true,
       "origins:fire_immunity": true,
       "ea:extreme_hydrophobia": true,
       "origins:pumpkin_hate": true,
@@ -266,7 +266,7 @@
     },
     "origins:enderian": {
       "enabled": true,
-      "origins:throw_ender_pearl": true,
+      "orbasb:throw_ender_pearl": true,
       "origins:water_vulnerability": true,
       "origins:pumpkin_hate": true,
       "origins:extra_reach": true,
@@ -467,7 +467,7 @@
     },
     "ea:water_enderian": {
       "enabled": true,
-      "origins:throw_ender_pearl": true,
+      "orbasb:throw_ender_pearl": true,
       "ea:flammable": true,
       "ea:nether_weakness": true,
       "ea:not_fins": true,
