@@ -39,8 +39,9 @@ services:
       MODE: survival
       DIFFICULTY: hard
       SEED: 188557497422300983
+      VERSION: latest
       MODPACK_PLATFORM: MODRINTH
-      MODRINTH_MODPACK: /modpack/aloha-snack-bar-s3.mrpack
+      MODRINTH_MODPACK: aloha-to-adventure
       MAX_MEMORY: 16G
       CFG_SERVER_NAME: survival
     volumes:
