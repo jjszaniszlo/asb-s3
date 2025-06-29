@@ -32,25 +32,25 @@ services:
       RCON_PASSWORD: ${MC_RCON_PASSWORD}
       MODRINTH_ALLOWED_VERSION_TYPE: beta
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
+      MODRINTH_FORCE_SYNCHRONIZE: true
       MODRINTH_PROJECTS: |
-        alternate-current:ckuIQWvo
-        audioplayer:hDi749ai
-        carpet:K0Wj117C
-        chunky:NHWYq9at
-        chunkyborder:74w5ono0
         crossstitch:dJioNlO8
-        entity-view-distance:piYJfUyC
         fabricproxy-lite:XJmDAnj5
-        image2map:T71Apams
-        lmd:rOkgwJ12
         luckperms:7PNj6nCm
+        sdlink:U3TpSJoR
         mysql-jdbc:94JxXm7O
         placeholder-api:DaV2ycYi
-        recipecooldown:oe5KEgWu
-        sdlink:U3TpSJoR
-        servercore:m978FuzE
         solstice-essentials:fmCpQgOo
+        vanilla-permissions:Qw3egHgT
+
+        audioplayer:hDi749ai
+        carpet:K0Wj117C
+        image2map:T71Apams
+        chunky:NHWYq9at
+        chunkyborder:74w5ono0
+        
+        recipecooldown:oe5KEgWu
+        servercore:m978FuzE
         threadtweak:gBP1GqtK
         tt20:qmNvXoqy
-        vanilla-permissions:Qw3egHgT
         vmp-fabric:sV8lIBhJ
