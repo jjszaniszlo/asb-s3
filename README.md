@@ -1,16 +1,6 @@
 # Aloha Snack Bar - Season 3 Minecraft Server
 
-This repository contains mostly server related configuration, but also houses the same release candidates as the client.  The bulk of the shared configuration is already included within the `.mrpack` file, so on here you will find server overrides exclusively.
-
-# Some Notes
-
-- Most mods have their keybinds unbinded by default.  I did this to make it less of a chore to handle conflicts. It's a good idea to just bind a key whenever it becomes relevant :)
-- This is and will be a WIP throughout our time on the world, so if you have feedback, please do not hesitate to bring it up with me on discord or make an issue on this git repo.
-
-# Installation Guide
-
-1) Download `aloha-snack-bar-s3.mrpack` from the latest release.
-2) Import into a Modrinth compatible launcher.  I recommend and use `Prism`.
+This is the repository for the server config.
 
 # Mod List
 - [3d-Skin-Layers](https://modrinth.com/mod/zV5r3pPn)
