@@ -77,41 +77,48 @@ services:
               ]
           }
       MODRINTH_PROJECTS: |
-        carpet:K0Wj117C
+        crossstitch:dJioNlO8
         fabricproxy-lite:XJmDAnj5
         luckperms:7PNj6nCm
-        crossstitch:dJioNlO8
-        c2me-fabric:s4WOiNtz
-        vmp-fabric:sV8lIBhJ
-        threadtweak:gBP1GqtK
-        alternate-current:ckuIQWvo
-        recipecooldown:oe5KEgWu
-        entity-view-distance:piYJfUyC
-        tt20:qmNvXoqy
-        lmd:rOkgwJ12
-        placeholder-api:DaV2ycYi
-        audioplayer:hDi749ai
-        vanilla-permissions:Qw3egHgT
-        servercore:m978FuzE
-        image2map:T71Apams
         mysql-jdbc:94JxXm7O
+        placeholder-api:DaV2ycYi
         sdlink:U3TpSJoR
-        styled-chat:pwr7uYCH
+
+        vmp-fabric:sV8lIBhJ
+        tt20:qmNvXoqy
+        c2me-fabric:s4WOiNtz
+        servercore:m978FuzE
+        modernfix:coV9vitC
+        alternate-current:ckuIQWvo
+        lithium:vuuAe7ZA
+        chunky:NHWYq9at
+        chunkyborder:74w5ono0
+        krypton:jiDwS0W1
+        ferrite-core:unerR5MN
+        spark:XGW2fviP
+        recipecooldown:oe5KEgWu
+        solstice-essentials:fmCpQgOo
+        vanilla-permissions:Qw3egHgT
+
+        audioplayer:hDi749ai
+        image2map:T71Apams
+        carpet:K0Wj117C
         axiom:61myQqfU
         abstract:8T0l0QkL
         botania:t7kGxx07
         built:ONN2RViA
         clutter:t7kGxx07
         convenient-decor:JrcEJiEH
-        distanthorizons:vSDePnsB
-        ferrite-core:unerR5MN
-        krypton:jiDwS0W1
-        lithium:vuuAe7ZA
+        macaws-bridges:GOwdtbfi
+        macaws-doors:HU3H8NiB
+        macaws-fences-and-walls:fkcqoGXg
+        macaws-furniture:7aTbV3Sq
+        macaws-lights-and-lamps:zdA7bseh
+        macaws-paths-and-pavings:fNu9PbhG
+        macaws-roofs:BMjP4VXn
         macaws-stairs:XNlrOt9m
-        memoryleakfix:5xvCCRjJ
-        noisium:erSJnRcq
-        spark:XGW2fviP
-        starlight:XGIsoVGT
+        macaws-trapdoors:6FBIUQpW
+        macaws-windows:88sYNcv4
     volumes:
       - mc-creative-data:/data
       - ./config/minecraft:/config
