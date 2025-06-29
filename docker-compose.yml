@@ -47,7 +47,6 @@ services:
     volumes:
       - mc-survival-data:/data
       - ./config/minecraft:/config
-      - ./modpack:/modpack:ro
     depends_on:
       - luckperms
     networks:
