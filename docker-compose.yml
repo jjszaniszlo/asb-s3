@@ -158,7 +158,7 @@ services:
       RCON_PASSWORD: ${MC_RCON_PASSWORD}
     volumes:
       - mc-survival-data:/data:ro
-      - ./mc-backups:/backups
+      - backups:/backups
     networks:
       - mc-rcon 
 
@@ -193,6 +193,7 @@ volumes:
   mc-proxy-data: {}
   mc-rcon-data: {}
   mc-survival-data: {}
+  backups: {}
 
 networks:
   dbs:
