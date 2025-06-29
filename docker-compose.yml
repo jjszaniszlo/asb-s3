@@ -157,9 +157,9 @@ services:
       RCON_HOST: mc-survival
       RCON_PASSWORD: ${MC_RCON_PASSWORD}
       PRE_SAVE_ALL_SCRIPT: |
-        echo "[$$RCON_HOST] Backing up, pausing all world changes."
+        rcon-cli say "[$$RCON_HOST] Backing up, pausing all world changes."
       POST_BACKUP_SCRIPT: |
-        echo "[$$RCON_HOST] Back up completed, resuiming all world changes."
+        rcon-cli say "[$$RCON_HOST] Back up completed, resuiming all world changes."
       INCLUDES: world
     volumes:
       - mc-survival-data:/data:ro
