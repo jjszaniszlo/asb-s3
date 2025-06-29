@@ -151,11 +151,17 @@ services:
   backups:
     container_name: backups
     image: itzg/mc-backup
-    user: "1000"
     environment:
-      BACKUP_INTERVAL: 12h
+      BACKUP_INTERVAL: 8h
+      PAUSE_IF_NO_PLAYERS: true
+      PRUNE_BACKUPS_DAYS: 2d
       RCON_HOST: mc-survival
       RCON_PASSWORD: ${MC_RCON_PASSWORD}
+      PRE_SAVE_ALL_SCRIPT: |
+        echo "[$$RCON_HOST] Backing up, pausing all world changes."
+      POST_BACKUP_SCRIPT: |
+        echo "[$$RCON_HOST] Back up completed, resuiming all world changes."
+      INCLUDES: world
     volumes:
       - mc-survival-data:/data:ro
       - backups:/backups
