@@ -3,6 +3,8 @@ services:
     container_name: mc-proxy
     hostname: mc-proxy
     image: itzg/mc-proxy
+    tty: true
+    stdin_open: true
     restart: unless-stopped
     ports:
       - "25565:25565/tcp"
